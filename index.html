@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Лаб1</title>
+    <style>
+        .container{
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%)translateY(-50%);
+            width: 50%;
+            justify-content: center;
+            align-items: center;
+        }
+        .circle{
+            width: 250px;
+            height: 250px;
+            background-color: blue;
+            border-radius: 50%;
+            position: relative;
+        }
+        .small-circle{
+            width: 230px;
+            height: 230px;
+            background-color: #d64161;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%)translateX(-50%);
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="circle">
+        <div class="small-circle">
+
+        </div>
+    </div>
+    <p id="secondName">Moroz</p>
+    <select name="change language" id="languageChange">
+        <option value="1">English</option>
+        <option value="2">Українська</option>
+    </select>
+
+    <script>
+        const list = document.getElementById("languageChange");
+        const secondName = document.getElementById("secondName");
+        list.addEventListener("change",function () {
+            if (list.value == 1){
+                secondName.innerText = "Moroz";
+            } else if (list.value == 2){
+                secondName.innerText = "Мороз";
+            }
+        })
+    </script>
+</div>
+</body>
+</html>
