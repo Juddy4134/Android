@@ -1,39 +1,63 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Лаб2</title><style>
-        .container{
-            display: flex;
-            flex-direction: column;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translateX(-50%)translateY(-50%);
-            width: 50%;
-            justify-content: center;
-            align-items: center;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My first gooooooood game!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrapper">
 
-        }
-        .style{
-            margin-bottom: 10px;
-            background-color: cyan;
-            border: 1px solid coral;
-            border-radius: 5px;
-            width: 40%;
-            padding: 5px;
-        }
-    </style></head><body>
-    <div class="container">
-        <input type="text" id="EntryField" placeholder="Введите масив цифр через знак ','" class="style">
-        <button class="style" id="btn">Вивести максимальний елемент масива</button>
-        <input id="massiv" class="style" type="text" readonly placeholder="Ваш масив">
-        <input id="maxElem" class="style"  type="text" readonly placeholder="Максимальний елемент масиву">
-    </div>
-    <script>
-        const btn = document.getElementById("btn");
-        const entryField = document.getElementById("EntryField");
-        const arr = document.getElementById("massiv");
-        const maxEl = document.getElementById("maxElem");
-        btn.addEventListener("click",function () {
-            const newArr = entryField.value.split(",");
-            arr.value = newArr.join(",");
-            let max = 0;
-            newArr.forEach((item) =>{if (max < item){max = item;}});maxEl.value = max;})
-    </script></body></html>
+    <header>
+        <h1>Whack-a-Mole</h1>
+        <div class="score-box" id="score-box">
+            <h2>Score</h2>
+            <p class="score-out" id="score-out">0</p>
+        </div><!-- end score-box -->
+    </header>
+    <main>
+        <button class="btn-start" id="btn-start">Start Game</button>
+        <div class="game-container">
+            <div class="row">
+                <div class="box">
+                    <img src="images/mole.jpg" alt="mole" class="mole-pic" id="mole-01">
+                    <img src="images/dirt.jpg" alt="dirt" class="dirt-pic">
+                    <div class="mask"></div><!-- end mask -->
+                </div><!-- end box -->
+                <div class="box">
+                    <img src="images/mole.jpg" alt="mole" class="mole-pic"
+                         id="mole-02">
+                    <img src="images/dirt.jpg" alt="dirt" class="dirt-pic">
+                    <div class="mask"></div><!-- end mask -->
+                </div><!-- end box -->
+                <div class="box">
+                    <img src="images/mole.jpg" alt="mole" class="mole-pic"
+                         id="mole-03">
+                    <img src="images/dirt.jpg" alt="dirt" class="dirt-pic">
+                    <div class="mask"></div><!-- end mask -->
+                </div><!-- end box -->
+            </div><!-- end row -->
+            <div class="row">
+                <div class="box">
+                    <img src="images/mole.jpg" alt="mole" class="mole-pic" id="mole-04">
+                    <img src="images/dirt.jpg" alt="dirt" class="dirt-pic">
+                    <div class="mask"></div><!-- end mask -->
+                </div><!-- end box -->
+                <div class="box">
+                    <img src="images/mole.jpg" alt="mole" class="mole-pic" id="mole-05">
+                    <img src="images/dirt.jpg" alt="dirt" class="dirt-pic">
+                    <div class="mask"></div><!-- end mask -->
+                </div><!-- end box -->
+                <div class="box">
+                    <img src="images/mole.jpg" alt="mole" class="mole-pic" id="mole-06">
+                    <img src="images/dirt.jpg" alt="dirt" class="dirt-pic">
+                    <div class="mask"></div><!-- end mask -->
+                </div><!-- end box -->
+            </div><!-- end row -->
+        </div><!-- end game-container -->
+    </main>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="index.js"></script>
+</body>
+</html>
