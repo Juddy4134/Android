@@ -1,3 +1,4 @@
+/* GIT HUB BLEAT */
 class Note {
 	constructor (id = null, content = '') {
 		const instance = this;
