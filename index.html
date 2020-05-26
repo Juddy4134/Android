@@ -1,36 +1,21 @@
-<!DOCTYPE html><html lang="en"><head>
-    <meta charset="UTF-8"><title>Лаб1</title><style>
-        p{color: purple;font-style: italic;font-size: 20px; display: inline-block;}
-        #eng.active,#uk.active{display: inline-block;}
-        img {height: 100%;width: 49%;}
-        .circle{width: 250px;height: 250px;background-color: blue;
-            border-radius: 50%;position: relative;}
-        .container{display: flex;flex-direction: column;position: absolute;top: 50%;left: 50%;
-            transform: translateX(-50%)translateY(-50%);width: 50%;justify-content: center;align-items: center;}
-        .small-circle{width: 230px;height: 230px;background-color: brown;border-radius: 50%;
-            position: absolute;top: 50%;left: 50%;transform: translateY(-50%)translateX(-50%);}
-        #eng,#uk{width: 140px;height: 50px;display: none;}
-    </style>
-</head><body><div class="container">
-    <div class="circle"><div class="small-circle"></div></div>
-    <div>
-        <p id="fam">Ісаков Максим</p>
-        <div id="eng"><img src="GB.png" alt="England"><img src="GB.jpg" alt="England"></div>
-        <div id="uk" class="active"><img src="UKR.png" alt="ukr"><img src="УКР.png" alt="укр"></div>
-    </div>
-
-    <select id="language">
-        <option value="2">Українська</option>
-        <option value="1">English</option>
-    </select><script>
-        const list = document.querySelector("#language"), fam = document.querySelector("#fam"),
-            eng = document.querySelector("#eng"), uk = document.querySelector("#uk");
-        let flag = "uk";
-        list.addEventListener("change", () => {switch (flag) {
-                case "uk":
-                    fam.innerText = "Isakov Maks";eng.classList.add("active");
-                    uk.classList.remove("active");flag = "eng";break;
-                case "eng":
-                    fam.innerText = "Ісаков Максим";uk.classList.add("active");
-                    eng.classList.remove("active");flag = "uk";break;}});
-    </script></div></body></html>
+<head><meta charset="UTF-8"><title>Лаб2</title><style>
+        .container{display: flex;flex-direction: column;
+        justify-content: center;align-items: center;}
+        .style{margin-bottom: 10px;width: 40%;padding: 5px;}
+    </style></head><body><div class="container">
+    <input type="text" id="EntryField" placeholder="Введите масив цифр через знак ','" class="style">
+    <button class="style" id="btn">Вивести максимальний елемент масива</button>
+    <input id="massiv" class="style" type="text" readonly placeholder="Ваш масив">
+    <input id="maxElem" class="style"  type="text" readonly placeholder="Максимальний елемент масиву">
+    </div><script>
+        const btn = document.getElementById("btn");
+        const entryField = document.getElementById("EntryField");
+        const arr = document.getElementById("massiv");
+        const maxEl = document.getElementById("maxElem");
+        btn.addEventListener("click",function () {
+            let newArr = entryField.value.split(",");
+            arr.value = newArr.join(",");
+            newArr.sort(function(a,b){return a-b});
+            maxEl.value = newArr.pop()})
+    </script></body></html>
+    <!-- 3551,654,6874,64,245 -->
